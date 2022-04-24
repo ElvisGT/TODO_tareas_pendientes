@@ -1,0 +1,17 @@
+.box {
+    width: 90%;
+    min-height: 500px;
+    margin: 30px auto;
+}
+
+.btn {
+    margin-top: 20px;
+}
+.box-list {
+    margin-top: 20px;
+    width: 300px;
+    min-height: 300px;
+}
+
+
+
