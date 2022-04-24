@@ -7,7 +7,9 @@ const Todo = () => {
     const addInput = useRef(); 
 
     const handleAddTODO = (todo) => {
-        addTodo(todo);
+        if(todo.length > 0){
+            addTodo(todo);
+        }
     }
     
 
@@ -31,7 +33,7 @@ const Todo = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button onClick={() => handleAddTODO(addInput.current.value)} type="button" className="btn btn-primary">Guardar TODO</button>
+                            <button onClick={() => handleAddTODO(addInput.current.value)} type="button" className="btn btn-primary" data-bs-dismiss="modal">Guardar TODO</button>
                         </div>
                         </div>
                     </div>
