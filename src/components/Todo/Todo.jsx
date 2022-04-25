@@ -6,11 +6,17 @@ const Todo = () => {
     const {todo,addTodo,removeTodo} = useTODO();
     const addInput = useRef(); 
 
-    const handleAddTODO = (todo) => {
+
+    const handleAddTODO = (todo ) => {
         if(todo.length > 0){
             addTodo(todo);
         }
     }
+
+    const handleRemoveTODO = (todo ) => {
+        removeTodo(todo);
+    }
+
     
 
     return(
@@ -48,9 +54,9 @@ const Todo = () => {
                 <div className="box-list">
                     <ul>
                         {
-                        todo.todo.map(item => (
-                            <li key={item}>{item}</li>
-                        ))
+                            todo.todo.map(item => (
+                            <li key={item}>{item} <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveTODO(item)}></button></li>
+                            ))
                         }
                     </ul>
                    
