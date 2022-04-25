@@ -1,29 +1,38 @@
-import React,{useState,useRef} from 'react';
+import React,{useRef,useState} from 'react';
 import '../../static/Css/style.css';
 import {useTODO} from '../../hooks/useTODO';
 
 const Todo = () => {
     const {todo,addTodo,removeTodo} = useTODO();
-    const addInput = useRef(); 
+    const addInput = useRef(null);
+    const searchInput = useRef(null); 
+    const [searchList,setSearchList] = useState([]);
 
 
     const handleAddTODO = (todo ) => {
         if(todo.length > 0){
             addTodo(todo);
         }
+        addInput.current.value = null; //Esto es para limpiar el input cuando agregamos un todo
     }
 
     const handleRemoveTODO = (todo ) => {
         removeTodo(todo);
     }
 
+    const handleChange = () => {
+        setSearchList(searchInput.current.value);
+    }
     
+    const showTODOS = todo.todo.filter(item => {
+        return item.toLowerCase().includes(searchList.toLowerCase());
+    })
 
     return(
         <div className="container">
             <div className="box">
-                <label htmlFor="search" className="form-label">Has completado 0 de 0 TODOs</label>
-                <input type="text" className="form-control" id="search" placeholder="Buscar TODO"></input>
+                <label htmlFor="search" className="form-label">Has agregado {todo.todo.length} TODOs a la lista</label>
+                <input type="text" className="form-control" id="search" placeholder="Buscar TODO" onChange={handleChange} ref={searchInput}></input>
                 
                 <h1 className="box-title">Crea tu primer TODO!</h1>
                 
@@ -54,7 +63,7 @@ const Todo = () => {
                 <div className="box-list">
                     <ul>
                         {
-                            todo.todo.map(item => (
+                            showTODOS.map(item => (
                             <li key={item}>{item} <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveTODO(item)}></button></li>
                             ))
                         }
