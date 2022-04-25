@@ -7,11 +7,22 @@
 .btn {
     margin-top: 20px;
 }
-.box-list {
-    margin-top: 20px;
-    width: 300px;
-    min-height: 300px;
+
+.lead {
+    margin-top: 10px;
 }
 
+.list-group-numbered{
+    margin-top: 30px;
+}
 
+.list-group-item{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.btn-close {
+    position: absolute;
+    right: 5px;
+}
 
