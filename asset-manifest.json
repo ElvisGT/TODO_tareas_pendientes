@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TODO_tares_pendientes/static/css/main.c9b2fd98.css",
+    "main.js": "/TODO_tares_pendientes/static/js/main.7651151d.js",
+    "index.html": "/TODO_tares_pendientes/index.html",
+    "main.c9b2fd98.css.map": "/TODO_tares_pendientes/static/css/main.c9b2fd98.css.map",
+    "main.7651151d.js.map": "/TODO_tares_pendientes/static/js/main.7651151d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9b2fd98.css",
+    "static/js/main.7651151d.js"
+  ]
+}
